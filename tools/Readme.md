@@ -5,3 +5,4 @@ Android tools
 静态代码检测工具
 ```
 - [渲染分析](https://developer.android.com/topic/performance/rendering)
+- [Android GPU Inspector (AGI)](https://developer.android.com/agi)
