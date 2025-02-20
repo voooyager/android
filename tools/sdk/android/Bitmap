@@ -1,0 +1,3 @@
+byte[] maskData // mask图
+Bitmap maskBitmap = Bitmap.createBitmap(width, height, ALPHA_8); //创建指定宽高的透明图片
+maskBitmap.copyPixelsFromBuffer(ByteBuffer.wrap(maskData)); // mask图按像素读取到bitmap
