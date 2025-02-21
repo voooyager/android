@@ -1,3 +1,16 @@
+创建mask图
 byte[] maskData // mask图
 Bitmap maskBitmap = Bitmap.createBitmap(width, height, ALPHA_8); //创建指定宽高的透明图片
 maskBitmap.copyPixelsFromBuffer(ByteBuffer.wrap(maskData)); // mask图按像素读取到bitmap
+
+实现图片缩放、旋转
+// 定义源矩形（图片原始大小）
+RectF srcRect = new RectF(0, 0, bitmap.getWidth(), bitmap.getHeight());
+// 定义目标矩形（视图区域）
+RectF dstRect = new RectF(0, 0, viewWidth, viewHeight);
+// 创建 Matrix 并设置居中缩放
+Matrix matrix = new Matrix();
+matrix.setRectToRect(srcRect, dstRect, Matrix.ScaleToFit.CENTER);
+matrix.postRotate(45, centerX, centerY); // 缩放后旋转
+// 应用变换绘制图片
+canvas.drawBitmap(bitmap, matrix, null);
