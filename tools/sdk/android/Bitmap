@@ -32,6 +32,11 @@ matrix.mapRect(cropRect, maskRect)
 // 创建抠图bitmap
 Bitmap cropBitmap = Bitmap.createBitmap((int)cropRect.width(), (int)cropRect.height(), Config.ARGB_8888)
 
+canvas.clipPath(cropPath) //通过路径（Path）定义画布可绘制区域,超出path区域不响应绘制
+
+canvas.drawBitmap(bitmap, src, dst, paint) 是实现 位图裁剪与缩放绘制 的核心方法;从源位图（bitmap）中截取指定区域（src），自动缩放/平移至目标区域（dst）绘制
+
+
 
 建议绘制不规则图形时开启抗锯齿功能
      Paint方法	          作用         	        常见搭配
