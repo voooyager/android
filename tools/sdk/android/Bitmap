@@ -1,3 +1,14 @@
+核心类
+Canvas
+Paint
+Point
+Path
+RectF
+Bitmap
+BitmapShader 通过位图（Bitmap）实现纹理填充 的核心类，可将图片作为着色器应用于图形绘制
+
+
+
 创建mask图
 byte[] maskData // mask图
 Bitmap maskBitmap = Bitmap.createBitmap(width, height, ALPHA_8); //创建指定宽高的透明图片
